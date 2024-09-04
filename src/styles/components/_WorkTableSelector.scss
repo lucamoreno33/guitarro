@@ -1,0 +1,61 @@
+.WTselector{
+    width: 100%;
+    height: 18rem;
+    background-color: rgba($madera, 0.7);
+    // border: 1px solid $oscuraMadera;
+    border-radius: 5px;
+    &-container{
+        padding: 20px 5px 0 5px;
+        
+        
+    }
+    &-title {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        margin-left: 5%;
+        color: $oscuraMadera;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -5%; /* Ajusta esto según el margen izquierdo */
+            width: calc(100% + 5%); /* Ajusta esto según el margen izquierdo */
+            border-bottom: 1px solid rgba($madera, 0.5);
+        }
+    }
+    &-content{
+        display: flex;
+        height: 90%;
+    }
+    &-img{
+        width: 80%;
+        max-width: 280px;
+        &-container{
+            display: flex;
+            justify-content: center;
+            &:focus{
+                animation: enlarge 0.3s ease-in-out;
+            }
+        }
+    }
+    h2{
+        font-size: 15px;
+        margin-top: 5px;
+    }
+    strong{
+        font-weight: normal;
+    }
+
+}
+@keyframes enlarge {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

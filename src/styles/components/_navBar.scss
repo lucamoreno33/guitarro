@@ -1,0 +1,133 @@
+
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #28282B;
+    &-container{
+        padding: 0 10px 0 10px;
+        height: 80px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #28282B;
+    }
+    &-img{
+        width: 80%;
+        
+        &:hover{
+            cursor: pointer;
+        }
+        &-container{
+            width: 17%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.Navbar{
+    display: flex;
+    width: 50%;
+    
+    &-link{
+        text-decoration: none;
+        color:  $madera ;
+        margin: 0 5px 0 5px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &-list{
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+    }
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+@media screen and (max-width: 550px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .abrir-menu {
+        color: $madera;
+        font-size: 27px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        &:hover{
+            color: $blanco;
+        }
+        
+    }
+
+    .cerrar-menu {
+        color: $madera;
+        font-size: 30px;
+        padding: 0;
+        &:hover{
+            color: $blanco;
+        }
+    }
+
+    .Navbar {
+        height: 100vb;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content:flex-start;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #1c1c1c;
+        padding: 1.1rem;
+        padding-left: 0.5rem;
+        padding-top: 0.9rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        z-index: 100;
+        width: 180px;
+        &.visible {
+            opacity: 1;
+            visibility: visible;
+            
+    
+    
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 200px;
+            padding: 0;
+        }
+        &-list li{
+            margin-top: 10px;
+        }
+        &-list li a {
+            color: #ecececec;
+            font-size: 18px;
+        }
+    }
+    .header-img-container{
+        width: 40%;
+    }
+
+}
+
