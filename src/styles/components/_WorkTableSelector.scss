@@ -1,27 +1,26 @@
 .WTselector{
     width: 100%;
     height: 18rem;
-    background-color: rgba($madera, 0.7);
-    // border: 1px solid $oscuraMadera;
+    background-color: $oscuro;
     border-radius: 5px;
+    border: 4px solid rgba(#0a0a0a, 0.5);
     &-container{
         padding: 20px 5px 0 5px;
-        
-        
     }
     &-title {
         display: flex;
         justify-content: flex-start;
         position: relative;
-        margin-left: 5%;
-        color: $oscuraMadera;
-        &::before {
+        margin-left: 2%;
+        color: $claraMadera;
+        &::before {   // este es el borde debajo del title, se sale de los bordes por estetica
             content: '';
             position: absolute;
             bottom: 0;
-            left: -5%; /* Ajusta esto según el margen izquierdo */
-            width: calc(100% + 5%); /* Ajusta esto según el margen izquierdo */
-            border-bottom: 1px solid rgba($madera, 0.5);
+            left: -5%;
+            width: 110%;
+            border-bottom: 1px solid $madera;
+            height: 3px;
         }
     }
     &-content{
@@ -34,28 +33,31 @@
         &-container{
             display: flex;
             justify-content: center;
-            &:focus{
-                animation: enlarge 0.3s ease-in-out;
-            }
+        }
+    }
+    &-arrow{  //esta es la flecha next
+        color: $claraMadera;
+        width: 100%;
+        height: 30%;
+        &-prev{  // y esta la prev, para ahorrar codigo no hago la clase arrow-nex
+            rotate: 180deg;
+        }
+        &:hover{
+            cursor: pointer;
         }
     }
     h2{
-        font-size: 15px;
+        font-size: 12px;
+        font-weight: 300;
         margin-top: 5px;
     }
     strong{
-        font-weight: normal;
+        font-weight: 300;
     }
 
 }
-@keyframes enlarge {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
+
+.carousel-control-prev,
+.carousel-control-next{
+    cursor: default !important; //bootstrap ponia pointer en todo el contenedor, me parecia confuso asi que lo cambie asi solo sale al posar sobre la flecha
 }

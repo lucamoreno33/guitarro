@@ -5,7 +5,7 @@
     left: 0;
     z-index: 10;
     width: 100%;
-    background-color: #28282B;
+    background-color: $oscuraMadera;
     &-container{
         padding: 0 10px 0 10px;
         height: 80px;
@@ -13,7 +13,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: #28282B;
+        
     }
     &-img{
         width: 80%;
@@ -35,17 +35,22 @@
     
     &-link{
         text-decoration: none;
-        color:  $madera ;
+        color: rgba($claraMadera, 0.6);
+        font-size: 14px;
         margin: 0 5px 0 5px;
+        
         &:hover{
             cursor: pointer;
+            color: rgba($claraMadera, 0.7)
         }
     }
     &-list{
         list-style-type: none;
         display: flex;
         margin: 0;
+        
     }
+
 }
 
 .abrir-menu,
@@ -63,7 +68,7 @@
     }
 
     .abrir-menu {
-        color: $madera;
+        color: rgba($claraMadera, 0.6);
         font-size: 27px;
         padding: 0;
         display: flex;
@@ -75,7 +80,7 @@
     }
 
     .cerrar-menu {
-        color: $madera;
+        color: rgba($claraMadera, 0.6);
         font-size: 30px;
         padding: 0;
         &:hover{
@@ -96,11 +101,11 @@
         top: 0;
         left: 0;
         bottom: 0;
-        background-color: #1c1c1c;
-        padding: 1.1rem;
+        background-color: #0a0a0a;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
         padding-left: 0.5rem;
         padding-top: 0.9rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        padding-right:0.5rem ;
         z-index: 100;
         width: 180px;
         &.visible {
@@ -114,20 +119,72 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            height: 200px;
+            border-top: 1px solid $madera;
+            border-bottom: 1px solid $madera;
+            
+            width: 100%;
             padding: 0;
+
+            li{
+                width: 100%;
+                a{
+                    padding: 3px;
+                    color: rgba($claraMadera, 0.6); 
+                    font-size: 11px;
+                }
+            }
+            &-container{
+                height: 90%;
+                width: 100%;
+                background-color: $oscuro;  //color interior donde esta el contenido
+                
+            }
         }
-        &-list li{
-            margin-top: 10px;
-        }
-        &-list li a {
-            color: #ecececec;
-            font-size: 18px;
-        }
+        
     }
     .header-img-container{
         width: 40%;
     }
-
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        
+        &-content{
+            display: none;
+            position: relative;
+            z-index: 1;
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+    
+            &.show {
+                display: block;
+                max-height: 500px;
+                background-color: rgba($superOscuraMadera, 0.6); //background color de los elementos de sublista
+                color: $madera;
+            }
+    
+            a {
+                border-top: 1px solid $madera;
+                text-decoration: none;
+                display: block;
+                color: $madera;
+    
+                &:hover {
+                    background-color: $madera;
+                    color: $oscuro;
+                }
+            }
+        }
+        &-icon{
+            color: $madera;
+            border-left: 1px solid $madera;
+            height: 100%;
+            width: 15%;
+            &:hover{
+                color: $claraMadera;
+                cursor: pointer;
+            }
+        }
+    }
 }
-
